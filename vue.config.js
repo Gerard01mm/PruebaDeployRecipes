@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: 'https://pruebafrontrecipe.onrender.com/',
+    publicPath: '',
     outputDir: './dist',
     indexPath: '../../templates/_base_vue.html',
 

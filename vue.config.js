@@ -1,7 +1,7 @@
 module.exports = {
-    publicPath: '',
+    publicPath: 'localhost:8080',
     outputDir: './dist',
-    indexPath: '../../templates/_base_vue.html',
+    indexPath: './public/index.html',
 
     configureWebpack: {
         devServer: {

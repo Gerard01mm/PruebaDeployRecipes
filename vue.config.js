@@ -1,7 +1,7 @@
 module.exports = {
     publicPath: 'https://pruebadeployrecipes.onrender.com',
-    outputDir: './dist',
-    indexPath: './public/index.html',
+    //outputDir: './dist',
+    //indexPath: './public/index.html',
 
     configureWebpack: {
         devServer: {

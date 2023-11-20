@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: 'localhost:8080',
+    publicPath: 'https://pruebadeployrecipes.onrender.com',
     outputDir: './dist',
     indexPath: './public/index.html',
 

@@ -56,7 +56,7 @@ export default {
         getRecipesByRate() {
             // Axios para coger el template
             axios
-                .get("https://backendrecipes.onrender.com/") // "/"
+                .get("https://localhost:8080/") // "/"
                 .then((response) => {
                     if (response.status === 200) {
                         const data = response.data
@@ -68,7 +68,7 @@ export default {
                 });
 
             // Axios para recibir las recetas
-            const url = "https://backendrecipes.onrender.com/recipe/rate/"
+            const url = "https://localhost:8080/recipe/rate/"
             axios
                 .get(url)
                 .then((response) => {

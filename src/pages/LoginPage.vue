@@ -72,7 +72,7 @@ export default {
             }
 
             try {
-                const url = process.env.BACKEND_URL.concat('/login/').toString()
+                const url = "https://backendrecipes.onrender.com" + `/register/`
                 let response = await axios.post(url, {
                     username: this.username,
                     email: this.email,

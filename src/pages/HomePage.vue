@@ -85,7 +85,7 @@ export default {
         getRecipesByRecent() {
             // Axios para coger el template
             axios
-                .get("backendrecipes.onrender.com/") // "/"
+                .get("https://backendrecipes.onrender.com/") // "/"
                 .then((response) => {
                     if (response.status === 200) {
                         const data = response.data
@@ -97,7 +97,7 @@ export default {
                 });
 
             // Axios para recibir las recetas
-            const url = "backendrecipes.onrender.com" + `/recipe/recent/`
+            const url = "https://backendrecipes.onrender.com" + `/recipe/recent/`
             axios
                 .get(url)
                 .then((response) => {

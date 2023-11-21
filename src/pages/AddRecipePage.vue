@@ -204,7 +204,7 @@ export default {
             if (this.showErrorMessage) {
                 return;
             }
-            const url = "backendrecipes.onrender.com" + `/addRecipe/`
+            const url = "https://backendrecipes.onrender.com" + `/addRecipe/`
             axios
                 .post(url, {
                     name: this.recipeName,

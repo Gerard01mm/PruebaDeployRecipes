@@ -155,6 +155,7 @@ export default {
             }
             try {
                 const url = process.env.BACKEND_URL + `/register/`
+                console.log(url)
                 // Send a registration request to the server
                 let response = await axios.post(url, {
                     username: this.username,

@@ -102,7 +102,7 @@ export default {
             const url2 =  process.env.BACKEND_URL.concat("recipe/recent/").toString()
             // Axios para recibir las recetas
             axios
-                .get("recipe/recent/")
+                .get(url2)
                 .then((response) => {
                     if (response.status === 200) {
                         const recipes = response.data.recipes;

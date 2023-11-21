@@ -170,7 +170,7 @@ export default {
 
         addRating() {
             //axios para postear el rating de una receta
-            const url = process.env.BACKEND_URL + `recipes/postratings/`
+            const url = "backendrecipes.onrender.com" + `recipes/postratings/`
             axios
                 .post(url, {
                     user_id: this.username,

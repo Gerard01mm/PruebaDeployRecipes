@@ -154,7 +154,7 @@ export default {
                 return;
             }
             try {
-                const url = process.env.BACKEND_URL + `/register/`
+                const url = "backendrecipes.onrender.com" + `/register/`
                 console.log(url)
                 // Send a registration request to the server
                 let response = await axios.post(url, {

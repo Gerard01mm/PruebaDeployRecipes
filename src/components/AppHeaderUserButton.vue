@@ -68,7 +68,7 @@ export default {
         },
         async logout() {
             try {
-                const url = process.env.BACKEND_URL + "/login/"
+                const url = "backendrecipes.onrender.com" + "/login/"
                 let response = await axios.post(url, {
                     username: this.username,
                     email: this.email,

@@ -68,7 +68,7 @@ export default {
         },
         async logout() {
             try {
-                const url = process.env.BACKEND_URL.concat(`/login/`).toString()
+                const url = process.env.BACKEND_URL + "/login/"
                 let response = await axios.post(url, {
                     username: this.username,
                     email: this.email,

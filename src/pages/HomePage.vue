@@ -51,14 +51,12 @@ export default {
     },
     methods: {
         redirectToRecipePage() {
-            const url = process.env.BACKEND_URL.concat('/addRecipe/').toString()
-            this.$router.push(url);
+            this.$router.push('/addRecipe');
         },
         getRecipesByRate() {
-            const url = process.env.BACKEND_URL.toString()
             // Axios para coger el template
             axios
-                .get(url)
+                .get(process.env.BACKEND_URL) // "/"
                 .then((response) => {
                     if (response.status === 200) {
                         const data = response.data
@@ -70,9 +68,9 @@ export default {
                 });
 
             // Axios para recibir las recetas
-            const url2 = process.env.BACKEND_URL.concat("recipe/rate/").toString()
+            const url = process.env.BACKEND_URL + `/recipe/rate/`
             axios
-                .get(url2)
+                .get(url)
                 .then((response) => {
                     if (response.status === 200) {
                         const recipes = response.data.recipes;
@@ -85,10 +83,9 @@ export default {
                 });
         },
         getRecipesByRecent() {
-            const url = process.env.BACKEND_URL.toString()
             // Axios para coger el template
             axios
-                .get(url)
+                .get(process.env.BACKEND_URL) // "/"
                 .then((response) => {
                     if (response.status === 200) {
                         const data = response.data
@@ -99,10 +96,10 @@ export default {
                     console.error("Error al obtener las recetas:", error);
                 });
 
-            const url2 =  process.env.BACKEND_URL.concat("recipe/recent/").toString()
             // Axios para recibir las recetas
+            const url = process.env.BACKEND_URL + `/recipe/recent/`
             axios
-                .get(url2)
+                .get(url)
                 .then((response) => {
                     if (response.status === 200) {
                         const recipes = response.data.recipes;

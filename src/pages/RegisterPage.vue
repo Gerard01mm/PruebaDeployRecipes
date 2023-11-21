@@ -154,7 +154,7 @@ export default {
                 return;
             }
             try {
-              const url = process.env.BACKEND_URL.concat('/register/').toString()
+                const url = process.env.BACKEND_URL + `/register/`
                 // Send a registration request to the server
                 let response = await axios.post(url, {
                     username: this.username,
@@ -181,14 +181,14 @@ export default {
                         alert(error.response.data.error);
                     } else if (error.response.status === 500) {
                         // Handle server errors
-                        alert("An error occurred while registering. 500");
+                        alert("An error occurred while registering.");
                     } else {
                         // Handle other status codes
                         alert("Unexpected error");
                     }
                 } else {
                     // Handle other unexpected errors
-                    alert("An error occurred while registering. NI RESPONSE");
+                    alert("An error occurred while registering.");
                 }
             }
         },

@@ -72,7 +72,8 @@ export default {
             }
 
             try {
-                let response = await axios.post('/login/', {
+                const url = process.env.BACKEND_URL.concat('/login/').toString()
+                let response = await axios.post(url, {
                     username: this.username,
                     email: this.email,
                     password: this.password,

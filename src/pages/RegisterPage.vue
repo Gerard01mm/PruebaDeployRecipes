@@ -181,14 +181,14 @@ export default {
                         alert(error.response.data.error);
                     } else if (error.response.status === 500) {
                         // Handle server errors
-                        alert("An error occurred while registering.");
+                        alert("An error occurred while registering. 500");
                     } else {
                         // Handle other status codes
                         alert("Unexpected error");
                     }
                 } else {
                     // Handle other unexpected errors
-                    alert("An error occurred while registering.");
+                    alert("An error occurred while registering. NI RESPONSE");
                 }
             }
         },

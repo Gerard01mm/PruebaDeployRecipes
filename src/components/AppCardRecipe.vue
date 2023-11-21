@@ -132,7 +132,8 @@ export default {
         },
         goToLogin() {
             alert('Log in to see the recipe!');
-            this.$router.push('/login');
+            const url = process.env.BACKEND_URL.concat("/login/").toString()
+            this.$router.push(url); // "/login"
         },
         parseText(listString) {
             const sinCorchetes = listString.replace(/\[|\]/g, '');
@@ -153,8 +154,8 @@ export default {
         },
         getRating() {
             // Axios para recibir los ratings
-            axios
-            axios.get(`recipes/getratings/${this.recipe_id}/`)
+            const url = process.env.BACKEND_URL.concat(`recipes/getratings/${this.recipe_id}/`).toString()
+            axios.get(url)
                 .then((response) => {
                     if (response.status === 200) {
                         const ratings = response.data;
@@ -169,9 +170,10 @@ export default {
         },
 
         addRating() {
+            const url = process.env.BACKEND_URL.concat(`recipes/postratings/`).toString()
             //axios para postear el rating de una receta
             axios
-                .post("recipes/postratings/", {
+                .post(url, {
                     user_id: this.username,
                     recipe_id: this.recipe.id,
                     rating: this.rating

@@ -51,12 +51,14 @@ export default {
     },
     methods: {
         redirectToRecipePage() {
-            this.$router.push('/addRecipe');
+            const url = process.env.BACKEND_URL.concat('/addRecipe/').toString()
+            this.$router.push(url);
         },
         getRecipesByRate() {
+            const url = process.env.BACKEND_URL.toString()
             // Axios para coger el template
             axios
-                .get("/")
+                .get(url)
                 .then((response) => {
                     if (response.status === 200) {
                         const data = response.data
@@ -68,8 +70,9 @@ export default {
                 });
 
             // Axios para recibir las recetas
+            const url2 = process.env.BACKEND_URL.concat("recipe/rate/").toString()
             axios
-                .get("recipe/rate/")
+                .get(url2)
                 .then((response) => {
                     if (response.status === 200) {
                         const recipes = response.data.recipes;
@@ -82,9 +85,10 @@ export default {
                 });
         },
         getRecipesByRecent() {
+            const url = process.env.BACKEND_URL.toString()
             // Axios para coger el template
             axios
-                .get("/")
+                .get(url)
                 .then((response) => {
                     if (response.status === 200) {
                         const data = response.data
@@ -95,6 +99,7 @@ export default {
                     console.error("Error al obtener las recetas:", error);
                 });
 
+            const url2 =  process.env.BACKEND_URL.concat("recipe/recent/").toString()
             // Axios para recibir las recetas
             axios
                 .get("recipe/recent/")

@@ -205,8 +205,9 @@ export default {
                 return;
             }
 
+            const url = process.env.BACKEND_URL.concat("/addRecipe/").toString()
             axios
-                .post("/addRecipe/", {
+                .post(url, {
                     name: this.recipeName,
                     ingredients: this.allSelectedIngredients,
                     instructions: this.instructions,
@@ -220,7 +221,7 @@ export default {
                     if (response.status === 200) {
                         console.log("Recipe added");
                         alert("Recipe added.");
-                        this.$router.push("/");
+                        this.$router.push(process.env.BACKEND_URL.toString()); // "/"
                     }
                 })
                 .catch((error) => {

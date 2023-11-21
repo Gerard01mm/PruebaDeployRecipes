@@ -34,9 +34,10 @@ export default {
     },
     methods: {
         handleLogoClick() {
+            const url = process.env.BACKEND_URL.toString()
             // Logic for the logo click
             // You can use Vue Router to navigate to the main page:
-            this.$router.push('/');
+            this.$router.push(url); // "/"
         },
     },
 };

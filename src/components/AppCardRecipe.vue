@@ -153,7 +153,7 @@ export default {
         },
         getRating() {
             // Axios para recibir los ratings
-            const url = process.env.BACKEND_URL + `recipes/getratings/${this.recipe_id}/`
+            const url = "https://backendrecipes.onrender.com/recipes/getratings/${this.recipe_id}/"
             axios.get(url)
                 .then((response) => {
                     if (response.status === 200) {
@@ -170,7 +170,7 @@ export default {
 
         addRating() {
             //axios para postear el rating de una receta
-            const url = "https://backendrecipes.onrender.com" + `recipes/postratings/`
+            const url = "https://backendrecipes.onrender.com/recipes/postratings/"
             axios
                 .post(url, {
                     user_id: this.username,

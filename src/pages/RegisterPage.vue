@@ -154,7 +154,7 @@ export default {
                 return;
             }
             try {
-                const url = "https://backendrecipes.onrender.com" + `/register/`
+                const url = "https://backendrecipes.onrender.com/register/"
                 console.log(url)
                 // Send a registration request to the server
                 let response = await axios.post(url, {

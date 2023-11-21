@@ -72,7 +72,7 @@ export default {
             }
 
             try {
-                const url = "https://backendrecipes.onrender.com" + `/register/`
+                const url = "https://backendrecipes.onrender.com/register/"
                 let response = await axios.post(url, {
                     username: this.username,
                     email: this.email,
